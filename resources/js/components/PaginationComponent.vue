@@ -124,6 +124,7 @@ export default {
 .pagination {
     align-items: flex-end;
     display: flex;
+    justify-content: center;
 }
 
 .pagination__button {

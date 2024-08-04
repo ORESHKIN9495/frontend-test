@@ -9,7 +9,7 @@ export default {
         return {
             form: {
                 name: "",
-                date: "",
+                date: new Date().toLocaleDateString(),
                 text: "",
             },
         };
