@@ -55,7 +55,7 @@ export default {
 }
 
 .card__image {
-    border: 1px solid rgb(var(--color-theme));
+    background-color: rgb(var(--color-theme));
     border-radius: 50%;
     height: 90px;
     width: 90px;
@@ -75,6 +75,14 @@ export default {
     gap: 10px;
     grid-column: 1 / -1;
     margin: 0 0 0 auto;
+}
+
+.card:hover .card__footer svg {
+    visibility: initial;
+}
+
+.card__footer svg {
+    visibility: hidden;
 }
 
 @media only screen and (max-width: 480px) {
