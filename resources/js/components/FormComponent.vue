@@ -41,7 +41,11 @@ export default {
             }
 
             setTimeout(() => {
-                this.form = {};
+                this.form = {
+                    name: "",
+                    date: new Date().toLocaleDateString(),
+                    text: "",
+                };
             }, 800);
         },
     },

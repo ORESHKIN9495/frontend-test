@@ -42,10 +42,17 @@ export default {
         },
 
         middleArray() {
-            return this.pagesArray.slice(
-                this.sliceParam,
-                this.pagesArray.length - this.sliceParam
-            );
+            if (this.pagesArray.length < 7) {
+                return this.pagesArray.slice(
+                    this.sliceParam,
+                    this.pagesArray.length
+                );
+            } else {
+                return this.pagesArray.slice(
+                    this.sliceParam,
+                    this.pagesArray.length - this.sliceParam
+                );
+            }
         },
     },
 
@@ -90,7 +97,7 @@ export default {
             </li>
         </ul>
 
-        <p v-if="index > 4" class="pagination__separator">...</p>
+        <p v-if="pagesArray.length >= 5" class="pagination__separator">...</p>
 
         <ul class="pagination__list">
             <li
@@ -103,11 +110,14 @@ export default {
             </li>
         </ul>
 
-        <p v-if="index < pagesArray.length - 3" class="pagination__separator">
+        <p
+            v-if="index <= pagesArray.length - 3 && pagesArray.length >= 7"
+            class="pagination__separator"
+        >
             ...
         </p>
 
-        <ul class="pagination__list">
+        <ul v-if="pagesArray.length >= 7" class="pagination__list">
             <li
                 v-for="el of pagesArray.slice(-sliceParam)"
                 :key="el"
