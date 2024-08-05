@@ -29,14 +29,18 @@ export default {
             <time>{{ data.date.split("-").reverse().join(".") }}</time>
         </hgroup>
 
-        <p class="card__description">{{ data.text }}</p>
+        <p class="card__description">
+            {{ data.text }}
+        </p>
 
         <footer class="card__footer">
             <svg width="20" height="20" v-on:click="setComment(data)">
+                <title>Редактировать коментарий</title>
                 <use xlink:href="../images/sprites.svg#pencil" />
             </svg>
 
             <svg width="20" height="20" v-on:click="removeComment()">
+                <title>Удалить коментарий</title>
                 <use xlink:href="../images/sprites.svg#trash" />
             </svg>
         </footer>
@@ -78,11 +82,11 @@ export default {
 }
 
 .card:hover .card__footer svg {
-    visibility: initial;
+    opacity: 1;
 }
 
 .card__footer svg {
-    visibility: hidden;
+    opacity: 0;
 }
 
 @media only screen and (max-width: 480px) {

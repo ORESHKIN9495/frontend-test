@@ -110,8 +110,7 @@ export default {
     background-color: rgba(var(--color-v1), 0.02);
     border-radius: var(--theme-radius);
     color: rgb(var(--color-v1));
-    font: inherit;
-    padding: 20px 40px;
+    padding: 20px clamp(20px, 2vw, 40px);
 }
 
 .form__description {

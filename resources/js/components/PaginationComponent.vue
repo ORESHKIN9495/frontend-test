@@ -140,7 +140,6 @@ export default {
 .pagination__button {
     color: rgb(var(--color-v1));
     cursor: pointer;
-    font: inherit;
     line-height: initial;
     padding: 5px 12px;
 }

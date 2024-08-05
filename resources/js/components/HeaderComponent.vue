@@ -57,7 +57,14 @@ export default {
         </h2>
 
         <nav class="header__nav">
+            <p
+                v-html="
+                    params === 0 ? 'По идентификатору' : 'По дате публикации'
+                "
+            />
+
             <svg width="30" height="30" v-on:click="selected = !selected">
+                <title>Фильтр по типу</title>
                 <use xlink:href="../images/sprites.svg#filter" />
             </svg>
 
@@ -77,6 +84,7 @@ export default {
                 height="30"
                 v-on:click="(direction = 0), filteredComments()"
             >
+                <title>По возрастанию</title>
                 <use xlink:href="../images/sprites.svg#sort-up" />
             </svg>
 
@@ -87,6 +95,7 @@ export default {
                 height="28"
                 v-on:click="(direction = 1), filteredComments()"
             >
+                <title>По убыванию</title>
                 <use xlink:href="../images/sprites.svg#sort-down" />
             </svg>
         </nav>
@@ -103,7 +112,6 @@ export default {
 }
 
 .header__counter span {
-    font: inherit;
     opacity: 0.6;
     margin: 0 0 0 5px;
 }
@@ -129,5 +137,11 @@ export default {
 
 .header__list li:hover {
     background-color: rgb(var(--color-v1), 0.1);
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        grid-template: auto / auto;
+    }
 }
 </style>
