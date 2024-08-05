@@ -132,6 +132,7 @@ export default {
 }
 
 .header__list li {
+    cursor: pointer;
     padding: 10px 20px;
 }
 
